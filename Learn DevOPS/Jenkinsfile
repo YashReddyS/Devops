@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GOOGLE_CREDENTIALS = credentials('gcp-service-account-key')
+        GOOGLE_CREDENTIALS_ID = '6b92e7b7-fefa-477d-852c-e3d7903f6bbd'
     }
 
     stages {
