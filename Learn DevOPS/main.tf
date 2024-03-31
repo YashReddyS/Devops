@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_container_cluster" "primary" {
-  name     = "my-gke-cluster"
+  name     = "my-gke-cluster-final"
   location = "us-central1"
 
   remove_default_node_pool = true
