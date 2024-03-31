@@ -22,8 +22,12 @@ pipeline {
 
         stage('Apply Terraform') {
             steps {
-                // Apply the Terraform scripts to create the GKE cluster
-                bat 'terraform apply -auto-approve'
+
+                withCredentials([file(credentialsId: '6b92e7b7-fefa-477d-852c-e3d7903f6bbd', variable: 'GCLOUD_SERVICE_KEY')]) {
+
+                    // Apply the Terraform scripts to create the GKE cluster
+                    bat 'terraform apply -auto-approve'
+                }
             }
         }
     }
