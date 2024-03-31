@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GOOGLE_CREDENTIALS_ID = 'f70d39d6-4d52-471e-beec-8104704059c1'
+        GOOGLE_CREDENTIALS_ID = credentials('f70d39d6-4d52-471e-beec-8104704059c1')
     }
 
     stages {
