@@ -16,14 +16,14 @@ pipeline {
         stage('Init Terraform') {
             steps {
                 // Initialize Terraform
-                sh 'terraform init'
+                bat 'terraform init'
             }
         }
 
         stage('Apply Terraform') {
             steps {
                 // Apply the Terraform scripts to create the GKE cluster
-                sh 'terraform apply -auto-approve'
+                bat 'terraform apply -auto-approve'
             }
         }
     }
