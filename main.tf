@@ -1,4 +1,5 @@
 provider "google" {
+  credentials = file(var.GOOGLE_CREDENTIALS_ID)
   project     = "learndevops-418907"
   region      = "us-central1"
 }
