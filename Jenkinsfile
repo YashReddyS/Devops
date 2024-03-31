@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GOOGLE_CREDENTIALS_ID = '6b92e7b7-fefa-477d-852c-e3d7903f6bbd'
+        GOOGLE_CREDENTIALS_ID = 'f70d39d6-4d52-471e-beec-8104704059c1'
     }
 
     stages {
@@ -22,12 +22,10 @@ pipeline {
 
         stage('Apply Terraform') {
             steps {
-
-                withCredentials([file(credentialsId: '6b92e7b7-fefa-477d-852c-e3d7903f6bbd', variable: 'GCLOUD_SERVICE_KEY')]) {
-
-                    // Apply the Terraform scripts to create the GKE cluster
-                    bat 'terraform apply -auto-approve'
-                }
+                
+                // Apply the Terraform scripts to create the GKE cluster
+                bat 'terraform apply -auto-approve'
+                
             }
         }
     }
