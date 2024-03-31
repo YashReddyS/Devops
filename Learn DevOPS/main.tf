@@ -25,15 +25,3 @@ resource "google_container_node_pool" "primary_nodes" {
   }
 }
 
-
-resource "google_storage_bucket" "terraform_state_bucket" {
-  name     = "tfstate-bucket"
-  location = "us-central1"
-}
-
-terraform {
-  backend "gcs" {
-    bucket = "your-terraform-state-bucket"
-    prefix = "terraform/state"
-  }
-}
