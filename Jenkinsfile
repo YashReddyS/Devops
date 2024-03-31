@@ -22,7 +22,7 @@ pipeline {
 
         stage('Apply Terraform') {
             steps {
-                
+                bat gcloud auth activate-service-account --key-file $GOOGLE_CREDENTIALS_ID
                 // Apply the Terraform scripts to create the GKE cluster
                 bat 'terraform apply -auto-approve'
                 
